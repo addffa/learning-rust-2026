@@ -26,6 +26,9 @@ fn main() {
 
     let r3 = &mut s; // no problem
     println!("{r3}");
+
+    let s = no_dangle();
+    println!("no dangle: {s}");
 }
 
 fn calculate_length(s: &String) -> usize {
@@ -34,5 +37,11 @@ fn calculate_length(s: &String) -> usize {
 
 fn change(some_string: &mut String) {
     some_string.push_str(", world");
+}
+
+fn no_dangle() -> String {
+    let s = String::from("hello");
+
+    s
 }
 
