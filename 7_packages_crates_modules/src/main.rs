@@ -1,3 +1,8 @@
+pub mod garden;
+
+use crate::garden::vegetables::Asparagus;
+
 fn main() {
-    println!("Hello, world!");
+    let plant = Asparagus{};
+    println!("The plant is: {plant:#?}");
 }
