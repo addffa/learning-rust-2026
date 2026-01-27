@@ -4,12 +4,15 @@ mod front_of_house {
     }
 }
 
+use crate::front_of_house::hosting;
+
 fn eat_at_restourant() {
-    // absolute path
-    crate::front_of_house::hosting::add_to_waitlist();
+    // link after use
+    hosting::add_to_waitlist();
 
     // relative path
     front_of_house::hosting::add_to_waitlist();
+
 }
 
 fn deliver_order() {}
