@@ -11,5 +11,19 @@ fn main() {
     for (key, value) in &scores {
         println!("{key}: {value}");
     }
+
+    let field_name = String::from("Fav color");
+    let field_value = String::from("Green");
+    let mut map = HashMap::new();
+    map.insert(field_name, field_value);
+
+    scores.entry(String::from("red")).or_insert(4);
+    scores.entry(String::from("yellow")).or_insert(10);
+    println!("{scores:#?}");
+
+    let mut plus_one = scores.entry(String::from("red")).or_insert(0);
+    *plus_one += 1;
+    println!("red: {plus_one}");
+    println!("{scores:#?}");
 }
 
