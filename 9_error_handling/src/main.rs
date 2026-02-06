@@ -51,3 +51,20 @@ fn last_char_on_the_first_line(text: &str) -> Option<char> {
     text.lines().next()?.chars().last()
 }
 
+struct Guess {
+    value: i32,
+}
+
+impl Guess {
+    pub fn new(value: i32) -> Guess {
+        if value < 1 || value > 100 {
+            panic!("the value must be in range 1 and 100, got: {value}");
+        }
+        Guess { value }
+    }
+
+    pub fn value(&self) -> i32 {
+        self.value
+    }
+}
+
